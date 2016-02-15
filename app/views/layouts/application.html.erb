@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>2016 College Training in Asia</title>
+  <title><%= full_title(yield(:title))  %></title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,8 +19,10 @@
   <![endif]-->
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="flash">
+    <%= flash_messages %>
+  </div>
+  <%= yield %>
+  <%= debug(params) if Rails.env.development? %>
 </body>
 </html>
